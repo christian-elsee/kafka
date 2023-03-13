@@ -5,3 +5,4 @@
 !cmd
 !go.mod
 !go.sum
+!sh
