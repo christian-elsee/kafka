@@ -8,7 +8,7 @@ export TS  := $(shell date +%s)
 .ONESHELL:
 .POSIX:
 
-## recipe
+## workflow
 @goal: distclean dist build
 
 dist:
@@ -65,9 +65,26 @@ distclean:
 clean:
 	kubectl delete -f dist/manifest.yaml
 
-## sanity targets
+## ad hoc
+push: branch := $(shell git branch --show-current)
+push: distclean dist ;: ## push
+	test "$(branch)"
+
+	# ensure working tree is clean for push
+	git status --porcelain \
+		| xargs \
+		| grep -qv .
+
+	<secrets/key.gpg gpg -d >dist/key
+	chmod 0600 dist/key
+
+	ssh-agent bash -c \
+		"ssh-add dist/key && \
+		 rm -rf dist/key &&  \
+		 git push origin $(branch) -f"
+
 lint:
-	goimports -l .
+	goimports -lv .
 	golint ./...
 	go vet ./... ||:
 

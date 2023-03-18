@@ -14,8 +14,8 @@ RUN go build -v -o ./target main.go
 FROM debian:bullseye-slim
 WORKDIR /opt/main
 
+COPY sh/ /opt/main/
 COPY --from=build /opt/main/target /usr/local/bin/kafka
-COPY --from=build /opt/main/sh     /opt/main/
 
 RUN apt update && \
   apt install -y --no-install-recommends \
