@@ -11,8 +11,6 @@
 !main.go
 !cmd
 !cmd/**
-!key.pub
-!secrets/key.gpg
 !README.md
 !Dockerfile
 !.dockerignore
