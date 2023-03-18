@@ -67,7 +67,7 @@ clean:
 
 ## ad hoc
 push: branch := $(shell git branch --show-current)
-push: distclean dist ;: ## push
+push: ;: ## push
 	test "$(branch)"
 
 	# ensure working tree is clean for push
@@ -75,13 +75,9 @@ push: distclean dist ;: ## push
 		| xargs \
 		| grep -qv .
 
-	<secrets/key.gpg gpg -d >dist/key
-	chmod 0600 dist/key
-
 	ssh-agent bash -c \
-		"ssh-add dist/key && \
-		 rm -rf dist/key &&  \
-		 git push origin $(branch) -f"
+		"<secrets/key.gpg gpg -d | ssh-add - \
+			&& git push origin $(branch) -f"
 
 lint:
 	goimports -lv .
