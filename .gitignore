@@ -16,6 +16,10 @@
 !README.md
 !Dockerfile
 !.dockerignore
-!secrets/docker.io.token.gpg
 !sh
 !sh/**
+
+# secrets
+!secrets
+!secrets/docker.io.token.gpg
+!secrets/key.gpg
