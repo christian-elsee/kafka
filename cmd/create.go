@@ -1,7 +1,3 @@
-/*
-Copyright © 2023 NAME HERE <EMAIL ADDRESS>
-
-*/
 package cmd
 
 import (
@@ -10,7 +6,7 @@ import (
 	"github.com/spf13/cobra"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/christianlc-highlights/kafka/pkg"
+	"github.com/christian-elsee/kafka/pkg"
 )
 
 // createCmd represents the create command

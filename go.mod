@@ -1,4 +1,4 @@
-module github.com/christianlc-highlights/kafka
+module github.com/christianlc-elsee/kafka
 
 go 1.18
 

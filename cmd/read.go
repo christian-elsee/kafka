@@ -8,7 +8,7 @@ import (
 	"fmt"
 
 	"github.com/spf13/cobra"
-	"github.com/christianlc-highlights/kafka/pkg"
+	"github.com/christian-elsee/kafka/pkg"
 	log "github.com/sirupsen/logrus"
 
 )
