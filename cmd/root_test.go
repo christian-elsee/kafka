@@ -6,7 +6,7 @@ import (
   "github.com/matryer/is"
 )
 
-func Test(t *testing.T) {
+func TestRoot(t *testing.T) {
   t.Logf("Enter")
   defer t.Logf("Exit")
 
