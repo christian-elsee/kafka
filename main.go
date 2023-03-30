@@ -1,7 +1,13 @@
 package main
 
-import "github.com/christian-elsee/kafka/cmd"
+import (
+	"os"
+	"github.com/christian-elsee/kafka/cmd"
+)
 
 func main() {
-	cmd.Execute()
+	err := cmd.Execute()
+	if err != nil {
+		os.Exit(1)
+	}
 }
