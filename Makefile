@@ -3,7 +3,6 @@ export ORG := christianelsee
 export SHA := $(shell git rev-parse --short HEAD)
 export TS  := $(shell date +%s)
 
-
 .DEFAULT_GOAL := @goal
 .ONESHELL:
 .POSIX:
@@ -13,7 +12,7 @@ export TS  := $(shell date +%s)
 
 dist:
 	mkdir $@
-	go mod init github.com/christianlc-highlights/kafka ||:
+	go mod init github.com/christian-elsee/kafka ||:
 	go mod tidy
 
 	cat manifest/cli.yaml \

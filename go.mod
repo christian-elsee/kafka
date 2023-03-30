@@ -1,4 +1,4 @@
-module github.com/christianlc-elsee/kafka
+module github.com/christian-elsee/kafka
 
 go 1.18
 

@@ -6,7 +6,7 @@ import (
 
 // constants ////////////////////////////////////
 
-const PROJECT string = "github.com/christianlc-highlights/kafka"
+const PROJECT string = "github.com/christian-elsee/kafka"
 
 // func /////////////////////////////////////////
 
