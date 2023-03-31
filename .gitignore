@@ -18,7 +18,12 @@
 !sh
 !sh/**
 
-# secrets
+## gh workflow
+!.github
+!.github/workflows
+!.github/workflows/main.yaml
+
+## secrets
 !secrets
 !secrets/docker.io.token.gpg
 !secrets/key.gpg

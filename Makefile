@@ -8,7 +8,7 @@ export TS  := $(shell date +%s)
 .POSIX:
 
 ## workflow
-@goal: distclean dist build
+@goal: distclean dist build check
 
 dist:
 	mkdir $@
