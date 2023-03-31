@@ -1,6 +1,7 @@
 *
 
 !main.go
+!main_test.go
 !pkg
 !cmd
 !go.mod

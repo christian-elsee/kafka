@@ -34,6 +34,15 @@ build: dist
 		-t docker.io/$(ORG)/$(NAME):$(SHA) \
 		.
 
+	# tag build image, which will be used to evaluate
+	# acceptance criteria
+	docker build --target build -t build/$(NAME) \
+		.
+
+check: build ;: ## check
+	docker run -it --rm \
+		-- build/$(NAME) go test ./... 
+
 namespace:
 	kubectl create namespace $(NAME) \
 		--dry-run=client \
